@@ -1,0 +1,95 @@
+[gd_scene format=4 uid="uid://dc7qbekhqmk7i"]
+
+[ext_resource type="Texture2D" uid="uid://ct3jehlp4405y" path="res://WhatsApp Image 2026-11-14 at 12.12.22 PM.jpeg" id="1_hqyvl"]
+[ext_resource type="Texture2D" uid="uid://drib074nodmcv" path="res://costa_3_plataforma_flotante_adobe.png" id="2_otv2m"]
+[ext_resource type="PackedScene" uid="uid://b7di5cvptqqck" path="res://chasqui.tscn" id="3_otv2m"]
+[ext_resource type="PackedScene" uid="uid://bat7yf206wbe1" path="res://serpiente.tscn" id="4_ki3iq"]
+[ext_resource type="AudioStream" uid="uid://bqjgyysmjdo3x" path="res://musicaaa.mpeg.wav" id="5_62ljx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ki3iq"]
+texture = ExtResource("2_otv2m")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -8.95326, 16, -8.602152, 16, 16, -16, 16)
+0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(16, -8.777706, -8.163267, -7.7243805, -16, -7.548826, -16, 14.044329, 16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -8.95326, 16, -8.602152, 16, 16, -16, 16)
+1:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(16, -8.777706, -8.163267, -7.7243805, -16, -7.548826, -16, 14.044329, 16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -8.95326, 16, -8.602152, 16, 16, -16, 16)
+2:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(16, -8.777706, -8.163267, -7.7243805, -16, -7.548826, -16, 14.044329, 16, 16)
+
+[sub_resource type="TileSet" id="TileSet_1qoo5"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ki3iq")
+
+[node name="Node2D" type="Node2D" unique_id=1519090455]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1703387593]
+
+[node name="Parallax2D" type="Parallax2D" parent="Node2D" unique_id=469654546]
+scroll_scale = Vector2(0.3, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D" unique_id=1998847749]
+position = Vector2(0, -197)
+scale = Vector2(2.0447214, 2.8767123)
+texture = ExtResource("1_hqyvl")
+centered = false
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=1866969646]
+scale = Vector2(1.1077853, 1.990062)
+tile_map_data = PackedByteArray("AAAAAAUAAAABAAAAAAABAAUAAAABAAAAAAACAAUAAAABAAAAAAADAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAHAAQAAAABAAAAAAAIAAQAAAABAAAAAAAJAAQAAAABAAAAAAAKAAQAAAABAAAAAAALAAQAAAABAAAAAAAMAAQAAAABAAAAAAAMAAMAAAABAAAAAAANAAMAAAABAAAAAAAOAAMAAAABAAAAAAAPAAUAAAABAAAAAAAQAAUAAAABAAAAAAARAAUAAAABAAAAAAASAAUAAAABAAAAAAAUAAYAAAABAAAAAAAVAAYAAAABAAAAAAAWAAYAAAABAAAAAAAXAAYAAAABAAAAAAAZAAUAAAABAAAAAAAaAAUAAAABAAAAAAAaAAQAAAABAAAAAAAbAAQAAAABAAAAAAAcAAQAAAABAAAAAAAeAAMAAAABAAAAAAAfAAMAAAABAAAAAAAdAAQAAAABAAAAAAAhAAUAAAABAAAAAAAiAAUAAAABAAAAAAAjAAUAAAABAAAAAAAjAAYAAAABAAAAAAAkAAYAAAABAAAAAAAlAAYAAAABAAAAAAAmAAYAAAABAAAAAAAnAAYAAAABAAAAAAAqAAYAAAABAAAAAAArAAYAAAABAAAAAAAsAAYAAAABAAAAAAAsAAUAAAABAAAAAAAtAAUAAAABAAAAAAAuAAUAAAABAAAAAAAvAAUAAAABAAAAAAAwAAUAAAABAAAAAAAxAAQAAAABAAAAAAAyAAQAAAABAAAAAAAzAAQAAAABAAAAAAA0AAQAAAABAAAAAAA1AAQAAAABAAAAAAA2AAQAAAABAAAAAAA3AAQAAAABAAAAAAA4AAUAAAABAAAAAAA5AAUAAAABAAAAAAA6AAUAAAABAAAAAAA7AAUAAAABAAAAAAA8AAUAAAABAAAAAAA9AAYAAAABAAAAAAA+AAYAAAABAAAAAAA/AAYAAAABAAAAAABAAAYAAAABAAAAAABBAAYAAAABAAAAAABDAAQAAAABAAAAAABEAAQAAAABAAAAAABFAAQAAAABAAAAAABGAAQAAAABAAAAAABHAAQAAAABAAAAAABIAAQAAAABAAAAAABJAAQAAAABAAAAAABCAAUAAAABAAAAAABLAAUAAAABAAAAAABMAAUAAAABAAAAAABNAAUAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_1qoo5")
+
+[node name="node 2d" type="Node2D" parent="Node2D" unique_id=865538447]
+scale = Vector2(1.0827339, 1.6053702)
+
+[node name="Chasqui" parent="." unique_id=1919321641 instance=ExtResource("3_otv2m")]
+position = Vector2(32, 125)
+
+[node name="Serpiente" parent="." unique_id=1930282180 instance=ExtResource("4_ki3iq")]
+position = Vector2(1899, 153)
+scale = Vector2(0.9678954, -0.9834963)
+
+[node name="DetectorBorde2" type="RayCast2D" parent="Serpiente" unique_id=522905978]
+position = Vector2(557.91156, -97.61093)
+target_position = Vector2(0, 45)
+
+[node name="Serpiente5" parent="." unique_id=1089017390 instance=ExtResource("4_ki3iq")]
+position = Vector2(1616, 309)
+
+[node name="DetectorBorde2" type="RayCast2D" parent="Serpiente5" unique_id=288884012]
+position = Vector2(13, 8)
+target_position = Vector2(-1, 51)
+
+[node name="Serpiente6" parent="." unique_id=99995380 instance=ExtResource("4_ki3iq")]
+position = Vector2(966, 259)
+
+[node name="DetectorBorde3" type="RayCast2D" parent="Serpiente6" unique_id=1324500645]
+position = Vector2(13, 6)
+target_position = Vector2(-1, 51)
+
+[node name="Serpiente2" parent="." unique_id=1113292708 instance=ExtResource("4_ki3iq")]
+position = Vector2(878, 118)
+
+[node name="DetectorBorde4" type="RayCast2D" parent="Serpiente2" unique_id=2052517798]
+position = Vector2(11, 2)
+target_position = Vector2(0, 59)
+
+[node name="Serpiente3" parent="." unique_id=263437009 instance=ExtResource("4_ki3iq")]
+position = Vector2(754, 377)
+
+[node name="DetectorBorde5" type="RayCast2D" parent="Serpiente3" unique_id=80136848]
+position = Vector2(182, -74)
+target_position = Vector2(0, 59)
+
+[node name="Serpiente4" parent="." unique_id=1963126347 instance=ExtResource("4_ki3iq")]
+position = Vector2(291, 253)
+
+[node name="DetectorBorde6" type="RayCast2D" parent="." unique_id=40159901]
+position = Vector2(272, 115)
+target_position = Vector2(0, 59)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=432541271]
+stream = ExtResource("5_62ljx")

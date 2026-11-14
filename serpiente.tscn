@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bat7yf206wbe1"]
+
+[ext_resource type="Script" uid="uid://cg23uxtrl4aq3" path="res://serpiente.gd" id="1_n8ekm"]
+[ext_resource type="Texture2D" uid="uid://da12ktgi0troa" path="res://serpiente_arena_ataque_0.png" id="2_31d46"]
+[ext_resource type="Texture2D" uid="uid://dw0v7sdvg1dfq" path="res://serpiente_arena_ataque_1.png" id="3_smbyx"]
+[ext_resource type="Texture2D" uid="uid://ceo3eov244ol5" path="res://serpiente_arena_ataque_2.png" id="4_qyuom"]
+[ext_resource type="Texture2D" uid="uid://ck8mrc47jvymt" path="res://serpiente_arena_caminar_0.png" id="5_eulx3"]
+[ext_resource type="Texture2D" uid="uid://cdy5vhfv7wssy" path="res://serpiente_arena_caminar_1.png" id="6_iwwuu"]
+[ext_resource type="Texture2D" uid="uid://bgjusskwnu6hr" path="res://serpiente_arena_caminar_2.png" id="7_mx1ht"]
+[ext_resource type="Texture2D" uid="uid://bfb5orkniao1w" path="res://serpiente_arena_caminar_3.png" id="8_eetv4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjagn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_31d46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_smbyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qyuom")
+}],
+"loop": 1,
+"name": &"ataque",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_eulx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iwwuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mx1ht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_eetv4")
+}],
+"loop": 1,
+"name": &"caminar",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjagn"]
+size = Vector2(60, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qoo5"]
+size = Vector2(58, 29)
+
+[node name="Serpiente" type="CharacterBody2D" unique_id=1930282180]
+collision_layer = 0
+script = ExtResource("1_n8ekm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2084098906]
+position = Vector2(-2.3841858e-07, 0)
+scale = Vector2(2.159091, 2.0833333)
+sprite_frames = SubResource("SpriteFrames_bjagn")
+animation = &"ataque"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=647401989]
+position = Vector2(-9, 5)
+shape = SubResource("RectangleShape2D_bjagn")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=948553219]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1507918361]
+position = Vector2(-9, 4.5)
+shape = SubResource("RectangleShape2D_1qoo5")
+
+[node name="DetectorBorde" type="RayCast2D" parent="." unique_id=786789170]
+position = Vector2(25, 0)
+target_position = Vector2(0, 45)
