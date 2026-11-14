@@ -54,20 +54,20 @@ collision_layer = 0
 script = ExtResource("1_n8ekm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2084098906]
-position = Vector2(-2.3841858e-07, 0)
-scale = Vector2(2.159091, 2.0833333)
+position = Vector2(10.249999, -6.5000014)
+scale = Vector2(2.625, 2.6250002)
 sprite_frames = SubResource("SpriteFrames_bjagn")
 animation = &"ataque"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=647401989]
-position = Vector2(-9, 5)
+position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_bjagn")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=948553219]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1507918361]
-position = Vector2(-9, 4.5)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_1qoo5")
 
 [node name="DetectorBorde" type="RayCast2D" parent="." unique_id=786789170]
