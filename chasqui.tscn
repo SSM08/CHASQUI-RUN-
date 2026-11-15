@@ -82,20 +82,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8t7g"]
-size = Vector2(41.3125, 80.375)
+size = Vector2(63.65625, 103.1875)
 
 [node name="Chasqui" type="CharacterBody2D" unique_id=1919321641 groups=["jugador"]]
 script = ExtResource("1_th4nk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=613237314]
-position = Vector2(23.999998, -3)
-scale = Vector2(3.024475, 2.6783447)
+position = Vector2(35.1084, -17.146488)
+scale = Vector2(3.3716125, 3.1204221)
 sprite_frames = SubResource("SpriteFrames_lc0jn")
 animation = &"idle"
 frame_progress = 0.32532704
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1077657896]
-position = Vector2(-13, -14)
+position = Vector2(-2, -36)
 shape = SubResource("RectangleShape2D_g8t7g")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1679100701]
